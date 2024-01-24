@@ -56,8 +56,8 @@
             data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-html="true">
 
 
-            Cart ({% if cart_items%}
-            {{cart_items|length}}
+            Cart ({% if total_cart_item%}
+            {{total_cart_item}}
             {% else %}
             {{0}}
             {% endif %}
