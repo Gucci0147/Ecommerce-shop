@@ -3,18 +3,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
-    {% block  title %} {% endblock title %}
+    {% block title %} {% endblock title %}
   </title>
   <meta content="ecommerce website we deliver products in 1 hours" name="description">
   <meta content="ecommerce" name="amazon,flipkart,selling,products">
 
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -27,8 +29,8 @@
   <!-- Template Main CSS File -->
   <link href="{% static '/assets/css/style.css' %}" rel="stylesheet">
 
- {% block style %}{% endblock style %}
- 
+  {% block style %}{% endblock style %}
+
 </head>
 
 <body>
@@ -37,37 +39,30 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="/" class="logo"><img src="{% static 'images/logo2.jpg' %}" 
-        alt="" class="img-fluid">Shopping Cart</a>
-      
+      <a href="/" class="logo"><img src="{% static 'images/logo2.jpg' %}" alt="" class="img-fluid">Shopping Cart</a>
+
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/cart">Home</a></li>
-          <li><a  class="nav-link scrollto" href="/blog">Blog</a></li>
+          <li><a class="nav-link scrollto" href="/blog">Blog</a></li>
           <li><a class="nav-link scrollto" href="/about">About</a></li>
           <li><a class="nav-link scrollto" href="/checkout">Checkout</a></li>
           <li><a class="nav-link scrollto" href="/about">My profile</a></li>
 
 
 
-          <button 
-            type="button" 
-            class="nav-link scrollto bg-danger text-white p-3 m-3" 
-            id="popcart"
-            data-bs-container="body" 
-            data-bs-toggle="popover" 
-            data-bs-placement="bottom" 
-            data-html="true">
-            
-            
-            Cart (
-          {%if cart_items%}
-            <span>{{cart_items.length}}</span>
-          {%else%}
-          <span>0</span>
-          {%endif%})
-          </button> 
+          <button type="button" class="nav-link scrollto bg-danger text-white p-3 m-3" id="popcart"
+            data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-html="true">
+
+
+            Cart ({% if cart_items%}
+            {{cart_items|length}}
+            {% else %}
+            {{0}}
+            {% endif %}
+            )
+          </button>
 
 
 
@@ -75,22 +70,22 @@
           <li>
             <a class="getstarted scrollto">Welcome {{user.username}}</a>
           </li>
-          
+
           <li><a class="nav-link scrollto" href="/auth/logout/">Logout
-         
-         
-          </a></li>
-          
+
+
+            </a></li>
+
           {% else %}
           <li class="dropdown"><a href="#"><span>SignIn</span> <i class="bi bi-chevron-down"></i></a>
-         
+
 
             <ul>
               <li><a href="/auth/signup/">SignUp</a></li>
               <li><a href="/auth/login/">Login</a></li>
             </ul>
           </li>
-          {% endif %}  
+          {% endif %}
 
 
 
@@ -108,14 +103,14 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      
+
       {% block content %}
 
-     
 
-      
-      
-      
+
+
+
+
       {% endblock content %}
 
     </div>
@@ -123,15 +118,15 @@
 
   <main id="main">
 
-   {% block body %}
-
-  
- 
-   
+    {% block body %}
 
 
-   
-   {% endblock body %}
+
+
+
+
+
+    {% endblock body %}
 
   </main><!-- End #main -->
 
@@ -207,7 +202,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -220,9 +216,9 @@
   <script src="{% static '/assets/js/main.js' %}"></script>
 
 
-{% block script %}
+  {% block script %}
 
-{% endblock script %}
+  {% endblock script %}
 
 </body>
 
